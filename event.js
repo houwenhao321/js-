@@ -116,8 +116,6 @@ const isNull = (vel) => {
     }
 }
 
-
-
 /**
  * 小数点后几位
  *
@@ -142,7 +140,6 @@ const formatFloatExp = (exp, digit) => {
 const formatFloat = (num, digit) => {
     return num.toString().substring(0, num.toString().indexOf(".") + digit + 1);
 }
-
 
 /**
  * 加法函数，用来得到精确的加法结果
@@ -185,14 +182,6 @@ const accAdd = (arg1, arg2) => {
 }
 
 /**
- ** 减法函数，用来得到精确的减法结果
- ** 说明：javascript的减法结果会有误差，在两个浮点数相减的时候会比较明显。这个函数返回较为精确的减法结果。
- ** 调用：accSub(arg1,arg2)
- ** 返回值：arg1加上arg2的精确结果
- **/
-
-
-/**
  * 减法函数，用来得到精确的减法结果
  * 说明：javascript的减法结果会有误差，在两个浮点数相减的时候会比较明显。这个函数返回较为精确的减法结果。
  * 调用：accSub(arg1,arg2)
@@ -219,7 +208,6 @@ const accSub = (arg1, arg2) => {
     return ((arg1 * m - arg2 * m) / m).toFixed(n);
 }
 
-
 /**
  * 乘法函数，用来得到精确的乘法结果
  * 说明：javascript的乘法结果会有误差，在两个浮点数相乘的时候会比较明显。这个函数返回较为精确的乘法结果。
@@ -242,7 +230,6 @@ const accMul = (arg1, arg2) => {
     } catch (e) { }
     return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m);
 }
-
 
 /**
  * 
@@ -279,7 +266,6 @@ const accDiv = (arg1, arg2) => {
     }
 }
 
-
 /**
  * 深拷贝（深拷贝不考虑函数）
  *
@@ -309,7 +295,6 @@ const deepClone = (obj, result) => {
     }
     return result;
 }
-
 
 /**
  * 深浅拷贝是针对引用值
@@ -384,14 +369,13 @@ const isAvailableEmail = (sEmail) => {
     return reg.test(sEmail)
 }
 
- 
 /**
  * 验证手机号
  *
  * @param {*} number 要验证的手机号
  * @return {*} 
  */
-const  isAvailableMobileNumber = (number) => {
+const isAvailableMobileNumber = (number) => {
     let reg = new RegExp("^1[3578]\\d{9}$")
     return reg.test(number)
 }
@@ -458,16 +442,16 @@ const getBrowser = () => {
         name: 'opera',
         it: u.indexOf('Opera') > -1 || u.indexOf('OPR') > -1
     }];
- 
+
     for (let i = 0; i < bws.length; i++) {
         if (bws[i].it) {
             return bws[i].name;
         }
     }
- 
+
     return 'other';
 }
- 
+
 /**
  * 区分系统
  *
